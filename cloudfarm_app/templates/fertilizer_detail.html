@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ fertilizer.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .details {
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .details strong {
+            color: #333;
+        }
+
+        .back-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #5c9e6f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .back-button:hover {
+            background-color: #4a7e55;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ fertilizer.name }}</h1>
+
+        <div class="image-container">
+            <img src="{{ fertilizer.image.url }}" alt="{{ fertilizer.name }}">
+        </div>
+
+        <div class="details">
+            <p><strong>Price:</strong> ₹{{ fertilizer.price }}</p>
+            <p><strong>Description:</strong> {{ fertilizer.description }}</p>
+            <p><strong>Suitable Crops:</strong> {{ fertilizer.suitable_crops }}</p>
+        </div>
+
+        <a href="{% url 'fertilizer_list' %}" class="back-button">Back to List</a>
+    </div>
+</body>
+</html>
